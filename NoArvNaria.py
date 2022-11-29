@@ -4,15 +4,15 @@ import copy
 class NoArvNaria:
     m = 0
     info = None
-    filhos = [None] * 2
+    filhos = [None] * m
     raiz = None
 
     def __init__(self, info=None, m=2):
         self.info = info
         self.filhos = [None] * m
 
-    def inicArvnaria(self):
-        return NoArvNaria(None)
+    def inicArvnaria(self, m=2):
+        return NoArvNaria(None, m)
 
     def criaArvNaria(self, tipoAN):
         self.info = tipoAN

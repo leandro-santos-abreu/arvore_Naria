@@ -5,14 +5,14 @@ from NoArvNaria import NoArvNaria
 if __name__ == '__main__':
 
     print("Bem Vindo ao Simulador de Arvore N-aria")
-    tamanhoFilhos = input("Insira o Tamanho Máximo de Filhos em um Nó: ")
+    tamanhoFilhos = int(input("Insira o Tamanho Máximo de Filhos em um Nó: "))
     raiz = input("Insira o Valor a ser a Raíz da Arvore: ")
     insercoes = input(
         "\nComo Deseja Lidar com Inserções? \n1 - Início da Lista de Filhos \n2 - Fim da Lista de Filhos \nEscolha: ")
     arvoresDesassociadas = []
     escolha = -1
 
-    arvoreNaria = NoArvNaria().inicArvnaria()
+    arvoreNaria = NoArvNaria().inicArvnaria(tamanhoFilhos)
 
     arvoreNaria.info = raiz
     arvoreNaria.m = tamanhoFilhos
@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
         if escolha == "1":
             elem = input("\nDigite o Valor a Ser Inserido na Arvore: ")
-            noFilho = NoArvNaria(elem)
+            noFilho = NoArvNaria(elem, tamanhoFilhos)
             noPai = input("Digite o Nó Pai a ser Associado ao Valor Anterior: ")
             noFilho.raiz = noPai
             if (insercoes == "2"):
