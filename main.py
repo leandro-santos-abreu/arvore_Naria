@@ -50,6 +50,7 @@ if __name__ == '__main__':
         elif escolha == "3":
             print("Arvore Naria Destruída.\nEncerrando o Programa...")
             arvoreNaria.destruirArvNaria()
+            break
         elif escolha == "4":
             arvoreNaria.imprime()
         elif escolha == "5":

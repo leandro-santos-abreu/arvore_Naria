@@ -43,8 +43,8 @@ class NoArvNaria:
                     self.filhos[index] = copy.deepcopy(noFilho)
                     return True
                 else:
-                    for i in range(index):
-                        self.filhos[i + 1] = copy.deepcopy(self.filhos[i])
+                    for i in range(len(subArvores)-1, -1, -1):
+                        self.filhos[i] = copy.deepcopy(self.filhos[i-1])
                     self.filhos[0] = copy.deepcopy(noFilho)
                     return True
         else:
