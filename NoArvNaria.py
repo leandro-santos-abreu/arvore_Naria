@@ -60,9 +60,15 @@ class NoArvNaria:
         if self.info == noPai:
             if subArvores.count(None) == 0:
                 return False
-            for f in range(len(subArvores)-1, -1, -1):
+            for f in range(len(subArvores) - 1, -1, -1):
                 if self.filhos[f] is None:
-                    self.filhos[f] = noFilho
+                    self.filhos[f] = copy.deepcopy(noFilho)
+                    return True
+                else:
+                    for i in range(len(subArvores) - 1):
+                        self.filhos[i] = copy.deepcopy(self.filhos[i+1])
+                    self.filhos[len(subArvores)-1] = copy.deepcopy(noFilho)
+
                     return True
         else:
             for f in self.filhos:
@@ -83,7 +89,6 @@ class NoArvNaria:
                 eliminado = filhos[f].elimSubArvNaria(i)
                 if eliminado:
                     return eliminado
-
 
     def destruirArvNaria(self):
         i = 0
